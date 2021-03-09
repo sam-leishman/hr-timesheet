@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Department } from 'src/app/interfaces/department';
 import { DepartmentsService } from "../../services/departments.service";
 
@@ -12,10 +13,15 @@ export class DepartmentsComponent implements OnInit {
 
   constructor(
     private departmentsService: DepartmentsService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.departments = this.departmentsService.departments;
+  }
+
+  goToDepartment(departmentId: string): void {
+    this.router.navigate(['./timesheet', { id: departmentId }]);
   }
 
 }
