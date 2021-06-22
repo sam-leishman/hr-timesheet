@@ -5,10 +5,10 @@ import { TimesheetComponent } from '../components/timesheet/timesheet.component'
 import { AnalyticsComponent } from '../components/analytics/analytics.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'departments', pathMatch: 'full' },
   { path: 'departments', component: DepartmentsComponent },
   { path: 'timesheet', component: TimesheetComponent },
-  { path: 'analytics', component: AnalyticsComponent }
+  { path: 'analytics', component: AnalyticsComponent },
+  { path: '**', redirectTo: 'departments', pathMatch: 'full' }
 ];
 
 @NgModule({
